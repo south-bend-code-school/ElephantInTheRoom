@@ -21,7 +21,9 @@
 		F166885C1E37670C00A0CC93 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F166885B1E37670C00A0CC93 /* ProfileViewController.swift */; };
 		F166885E1E37C41100A0CC93 /* NamedNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F166885D1E37C41100A0CC93 /* NamedNavigationViewController.swift */; };
 		F174709E1E5216EE001C3CB3 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174709D1E5216EE001C3CB3 /* PostDetailViewController.swift */; };
+		F17470A01E524B86001C3CB3 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174709F1E524B85001C3CB3 /* CommentCell.swift */; };
 		F1A000001E3A833800725466 /* AppSearchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0FFFF1E3A833800725466 /* AppSearchBarController.swift */; };
+		F1F1B1791E525BDB0026E8F3 /* SimplePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1B1781E525BDB0026E8F3 /* SimplePostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +45,9 @@
 		F166885B1E37670C00A0CC93 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F166885D1E37C41100A0CC93 /* NamedNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedNavigationViewController.swift; sourceTree = "<group>"; };
 		F174709D1E5216EE001C3CB3 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		F174709F1E524B85001C3CB3 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		F1A0FFFF1E3A833800725466 /* AppSearchBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSearchBarController.swift; sourceTree = "<group>"; };
+		F1F1B1781E525BDB0026E8F3 /* SimplePostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				F166885D1E37C41100A0CC93 /* NamedNavigationViewController.swift */,
 				F13E35511E374C3B0028FBC0 /* ViewController.swift */,
 				F13E35531E374C3B0028FBC0 /* Main.storyboard */,
+				F1F1B1781E525BDB0026E8F3 /* SimplePostCell.swift */,
+				F174709F1E524B85001C3CB3 /* CommentCell.swift */,
 				F174709D1E5216EE001C3CB3 /* PostDetailViewController.swift */,
 				F166885B1E37670C00A0CC93 /* ProfileViewController.swift */,
 				F16688591E375D6B00A0CC93 /* NewPostViewController.swift */,
@@ -244,6 +250,7 @@
 				F13E35521E374C3B0028FBC0 /* ViewController.swift in Sources */,
 				F1105A1C1E374E4D0027C570 /* PostTableViewController.swift in Sources */,
 				F166885E1E37C41100A0CC93 /* NamedNavigationViewController.swift in Sources */,
+				F17470A01E524B86001C3CB3 /* CommentCell.swift in Sources */,
 				F13E35501E374C3B0028FBC0 /* AppDelegate.swift in Sources */,
 				F1105A201E3752720027C570 /* Post.swift in Sources */,
 				F1A000001E3A833800725466 /* AppSearchBarController.swift in Sources */,
@@ -251,6 +258,7 @@
 				F174709E1E5216EE001C3CB3 /* PostDetailViewController.swift in Sources */,
 				F1105A221E37561A0027C570 /* PostCell.swift in Sources */,
 				F166885A1E375D6B00A0CC93 /* NewPostViewController.swift in Sources */,
+				F1F1B1791E525BDB0026E8F3 /* SimplePostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

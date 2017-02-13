@@ -54,10 +54,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("#")
-
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "MyPostCell", for: indexPath) as! PostCell
-        print("#")
         
         print(self.posts)
         print(indexPath.row)
@@ -69,19 +66,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // Create icon image
         let size = CGSize(width: 70, height: 70)
-        print("#")
-
         let iconIndex = abs(post.content!.hashValue % self.icons.count)
-        print("#")
-
         let color = self.colors[Int(post.time!.timeIntervalSince1970) % self.colors.count]
-        print("#")
-
         let icon = self.icons[iconIndex]
-        print("#")
-
         let image = icon.image(ofSize: size, color: color)
-        print("#")
         cell.postImage.image = image
         
         cell.selectionStyle = .none

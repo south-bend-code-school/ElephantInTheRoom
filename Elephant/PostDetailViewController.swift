@@ -61,17 +61,19 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = UITableViewCell()
+            let cell = self.tabeView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! SimplePostCell
             
-            cell.textLabel?.text = post.title
-            cell.selectionStyle = .none
+            cell.contentLabel.text = post.content
+            cell.titleLabe.text = post.title
+            cell.imageView?.image = post.icon(ofSize: CGSize(width: 70, height: 70))
             
             return cell
         } else {
-            let cell = UITableViewCell()
+            let cell = self.tabeView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
             
-            cell.textLabel?.text = self.post.comments[indexPath.row]
-            cell.selectionStyle = .none
+            cell.mainLabel.text = self.post.comments[indexPath.row].text
+            cell.imageView?.image = self.post.comments[indexPath.row].icon(ofSize: CGSize(width: 63, height: 63))
+            
             
             return cell
         }

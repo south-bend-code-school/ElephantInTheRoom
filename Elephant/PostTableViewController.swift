@@ -32,13 +32,19 @@ class PostTableViewController: UIViewController, UITableViewDelegate, UITableVie
 
         ref.observe(FIRDataEventType.childAdded, with: {
             snapshot in
-            print("Child Added")
-            self.posts.append(Post(snapshot: snapshot))
+            let post = Post(snapshot: snapshot)
+            post.onCommentAdded = {
+                comment in
+                self.reload()
+            }
+            self.posts.insert(post, at: 0)
+            
             self.reload()
         })
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.allowsMultipleSelectionDuringEditing = false;
     }
     
     func setShouldFilterByUser(shouldFilter: Bool) {
@@ -49,7 +55,7 @@ class PostTableViewController: UIViewController, UITableViewDelegate, UITableVie
         self.filteredPosts = self.posts.filter({
             post in
             
-            if filterByThisUser && post.userId != "4" {
+            if filterByThisUser && post.userId != UIDevice.current.identifierForVendor!.uuidString {
                 return false
             }
             
@@ -100,6 +106,11 @@ class PostTableViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.titleLabel.text = post.title
         cell.timeLabel.text = post.timeString()
         cell.categoryLabel.text = post.category
+        if post.comments.count == 1 {
+            cell.commentCount.text = "\(post.comments.count) comment"
+        } else {
+            cell.commentCount.text = "\(post.comments.count) comments"
+        }
         
         let size = CGSize(width: 70, height: 70)
         cell.postImage.image = post.icon(ofSize: size)

@@ -7,11 +7,12 @@
 //
 
 import Material
+import Iconic
 import SCLAlertView
 
 class AppSearchBarController: SearchBarController, SearchBarDelegate {
     
-    fileprivate var sosButton: RaisedButton!
+    fileprivate var sosButton: IconButton!
     fileprivate var searchButton: IconButton!
     
     open override func prepare() {
@@ -46,9 +47,12 @@ extension AppSearchBarController {
     }
     
     fileprivate func prepareSosButton() {
-        self.sosButton = RaisedButton(title: "SOS", titleColor: Color.white)
-        sosButton.pulseColor = .white
-        sosButton.backgroundColor = Color.blue.base
+        //self.sosButton = RaisedButton(title: "SOS", titleColor: Color.white)
+        //let image = FontAwesomeIcon.mobilePhone.image(ofSize: CGSize(width: 20, height: 20), color: Color.white)
+        let image = #imageLiteral(resourceName: "sos").resize(toWidth: 40)?.resize(toHeight: 40)
+        self.sosButton = IconButton(image: image, tintColor: Color.white)
+        sosButton.pulseColor = Color.blue.base
+        //sosButton.backgroundColor = Color.blue.base
     }
     
     fileprivate func prepareNavigationItem() {
@@ -100,7 +104,12 @@ extension AppSearchBarController {
         alertView.addButton("Call") {
             print("Call Tapped")
         }
-        alertView.showSuccess("For immediate help", subTitle: "Call the University Counceling Center's 24/7 hotline")
+        alertView.showCustom(
+            "For immediate help",
+            subTitle: "Call the University Counceling Center's 24./7 hotline",
+            color: Color.blue.base,
+            icon: FontAwesomeIcon.check.image(ofSize: CGSize(width: 20, height: 20), color: UIColor.white)
+        )   
     }
     
     func searchTapped(_ sender: IconButton!) {

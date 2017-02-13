@@ -61,8 +61,14 @@ extension NewPostViewController {
     
     func submitTapped(_ sender: IconButton!) {
         print("Submit tapped")
-        let post = Post(title: titleField.text!, content: contentView.text, userId: "3", category: categoryField.text!)
+        let post = Post(title: titleField.text!, content: contentView.text, userId: UIDevice.current.identifierForVendor!.uuidString, category: categoryField.text!)
         post.push()
-        SCLAlertView().showInfo("Post Published", subTitle: "Thanks and stuff")
+        SCLAlertView().showInfo("Post Published", subTitle: "Thank you, your post has been published!").setDismissBlock {
+            self.titleField.text = ""
+            self.contentView.text = ""
+            self.categoryField.text = ""
+            
+            self.pageTabBarController?.pageTabBar.buttons[0].sendActions(for: .touchUpInside)
+        }
     }
 }
