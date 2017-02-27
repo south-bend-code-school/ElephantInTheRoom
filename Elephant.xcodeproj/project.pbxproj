@@ -156,7 +156,7 @@
 				TargetAttributes = {
 					F13E354B1E374C3A0028FBC0 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = VERTCH9D49;
+						DevelopmentTeam = WM2D4S8TUD;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -380,12 +380,12 @@
 			baseConfigurationReference = DA6847D2872CA427B2D79482 /* Pods-Elephant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VERTCH9D49;
+				DEVELOPMENT_TEAM = WM2D4S8TUD;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Elephant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.south-bend-code-school.Elephant";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.south-bend-code-school.Elephant-shurz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -396,12 +396,12 @@
 			baseConfigurationReference = 1F6171105D0EC71F62AEE476 /* Pods-Elephant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VERTCH9D49;
+				DEVELOPMENT_TEAM = WM2D4S8TUD;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Elephant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.south-bend-code-school.Elephant";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.south-bend-code-school.Elephant-shurz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

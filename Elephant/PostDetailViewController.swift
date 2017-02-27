@@ -26,6 +26,8 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         self.tabeView.delegate = self
         self.tabeView.dataSource = self
         
+        self.tabeView.estimatedRowHeight = 80
+        
         self.navigationItem.titleLabel.text = "Comments"
         
         self.post.onCommentAdded = {
@@ -47,7 +49,7 @@ class PostDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 120
+            return min(UITableViewAutomaticDimension, 120)
         }
         return 80
     }

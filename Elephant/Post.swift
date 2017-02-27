@@ -19,12 +19,14 @@ let iconColors = [
 ]
 
 class Comment {
+    internal var id : String?
     internal var text : String?
     internal var time : NSDate?
     internal var userId : String?
     internal var post: Post!
     
     init(text: String, userId: String, post: Post) {
+        self.id = "0"
         self.time = NSDate()
         self.text = text
         self.userId = userId
@@ -36,6 +38,7 @@ class Comment {
             return
         }
         
+        self.id = snapshot.key
         self.text = value["comment"] as? String
         self.userId = value["userId"] as? String
 
@@ -47,12 +50,33 @@ class Comment {
     }
     
     func icon(ofSize size: CGSize) -> UIImage {
+        // check if op
         if self.userId == self.post.userId {
             return self.post.icon(ofSize: size)
         }
-        let color = iconColors[abs((self.userId!.hashValue + self.post.title!.hashValue) % iconColors.count)]
-        let logoHash = abs((self.userId!.hashValue + self.post.title!.hashValue) % iconCount) + 1
-        return (UIImage(named: "logo\(logoHash)\(color)")!.resize(toWidth: size.width)?.resize(toHeight: size.height))!
+        
+        // check if this user already commented on this post
+        var i = 0
+        var comment = self.post.comments[0]
+        while i < self.post.comments.count && comment.id != self.id {
+            if comment.userId == self.userId {
+                return comment.icon(ofSize: size)
+            }
+            i += 1
+            comment = self.post.comments[i]
+        }
+ 
+        let color = iconColors[Int(self.time!.timeIntervalSince1970) % iconColors.count]
+        var logoHash = "\(self.text!)\(self.userId!)".hashValue
+        // abs() uses int32 for some annoying reason
+        if logoHash < 0 {
+            logoHash *= -1
+        }
+        let image_index = (logoHash % iconCount) + 1
+        
+        
+        let imageName = "logo\(image_index)\(color)"
+        return (UIImage(named: imageName)!.resize(toWidth: size.width)?.resize(toHeight: size.height))!
     }
 }
 
